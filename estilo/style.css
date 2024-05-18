@@ -1,0 +1,234 @@
+@charset "UTF-8"; /* Define a codificação de caracteres como UTF-8 */
+
+/* Importa a fonte 'Bebas Neue' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Define uma fonte personalizada chamada 'Android' */
+@font-face {
+    font-family: 'Android'; /* Nome da fonte personalizada */
+    src: url('/fontes/idroid.otf') format('opentype'); /* Caminho e formato da fonte */
+    font-weight: normal; /* Peso da fonte */
+}
+
+/* Define variáveis de CSS para a paleta de cores e fontes usadas no site */
+:root { /* Seletor raiz do documento (abrange todo o site) */
+    --cor0: #c5ebd6; /* Cor de fundo principal */
+    --cor1: #83e1ad; /* Cor secundária */
+    --cor2: #3ddc84; /* Cor terciária */
+    --cor3: #2fa866; /* Cor de destaque */
+    --cor4: #1a5c37; /* Cor de fundo do cabeçalho */
+    --cor5: #063d1e; /* Cor de fundo do rodapé e outros elementos */
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif; /* Fonte padrão do site */
+    --fonte-destaque: "Bebas Neue", sans-serif; /* Fonte para destaques */
+    --fonte-android: 'Android', sans-serif; /* Fonte personalizada 'Android' */
+}
+
+/* Remove margens e paddings padrão de todos os elementos */
+* { 
+    margin: 0px; /* Remove todas as margens */
+    padding: 0px; /* Remove todos os paddings */
+}
+
+/* Estilização do corpo do site */
+body {
+    background-color: var(--cor0); /* Define a cor de fundo */
+    font-family: var(--fonte-padrao); /* Define a fonte padrão */
+}
+
+/* Adiciona um ícone de link após links externos */
+a.externo::after {
+    content: '\00A0\1F517'; /* Espaço e ícone de link */
+}
+
+/* Estilização do cabeçalho */
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /* Gradiente de fundo */
+    min-height: 150px; /* Altura mínima do cabeçalho */
+    text-align: center; /* Centraliza o texto */
+    padding-top: 40px; /* Espaçamento superior interno */
+}
+
+/* Estilização do título (h1) dentro do cabeçalho */
+header > h1 {
+    color: white; /* Cor do texto */
+    font-family: var(--fonte-destaque); /* Fonte de destaque */
+    font-size: 3em; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+    margin-bottom: 20px; /* Margem inferior */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267); /* Sombra do texto */
+}
+
+/* Estilização do parágrafo (p) dentro do cabeçalho */
+header > p {
+    font-family: var(--fonte-padrao); /* Fonte padrão */
+    font-size: 1.2em; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    max-width: 600px; /* Largura máxima do parágrafo */
+    padding-left: 10px; /* Espaçamento interno à esquerda */
+    padding-right: 10px; /* Espaçamento interno à direita */
+    margin: auto; /* Centraliza o parágrafo */
+    margin-bottom: 20px; /* Margem inferior */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315); /* Sombra do texto */
+}
+
+/* Estilização do menu de navegação */
+nav {
+    background-color: var(--cor5); /* Cor de fundo do menu de navegação */
+    padding: 10px; /* Espaçamento interno */
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363); /* Sombra ao redor do menu */
+}
+
+/* Estilização dos links dentro do menu de navegação */
+nav > a {
+    color: var(--cor1); /* Cor do texto dos links */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Arredondamento dos cantos */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold; /* Deixa o texto em negrito */
+    transition-duration: 0.5s; /* Animação de transição */
+}
+
+/* Estilização dos links do menu ao serem hover */
+nav > a:hover {
+    color: var(--cor5); /* Cor do texto ao passar o mouse */
+    background-color: var(--cor3); /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilização da área principal do site */
+main {
+    min-width: 300px; /* Largura mínima da área principal */
+    max-width: 1000px; /* Largura máxima da área principal */
+    margin: auto; /* Centraliza a área principal */
+    margin-bottom: 30px; /* Margem inferior */
+    padding: 20px; /* Espaçamento interno */
+    background-color: white; /* Cor de fundo */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418); /* Sombra ao redor da área principal */
+    border-bottom-left-radius: 10px; /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 10px; /* Arredonda o canto inferior direito */
+}
+
+/* Estilização dos títulos (h1) dentro da área principal */
+main h1 {
+    color: var(--cor5); /* Cor do texto */
+    font-family: var(--fonte-android); /* Fonte personalizada 'Android' */
+    font-weight: normal; /* Peso da fonte */
+    font-size: 1.8em; /* Tamanho da fonte */
+}
+
+/* Estilização dos subtítulos (h2) dentro da área principal */
+main h2 {
+    font-family: var(--fonte-android); /* Fonte personalizada 'Android' */
+    color: var(--cor4); /* Cor do texto */
+    font-size: 1.3em; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+    background-image: linear-gradient(to right, var(--cor1), transparent); /* Gradiente de fundo */
+    text-indent: 8px; /* Recuo do texto */
+}
+
+/* Estilização dos parágrafos (p) dentro da área principal */
+main p {
+    margin: 15px 0px 15px 0px; /* Margem superior e inferior */
+    text-align: justify; /* Justifica o texto */
+    text-indent: 30px; /* Recuo da primeira linha */
+    font-size: 1em; /* Tamanho da fonte */
+    line-height: 2em; /* Altura da linha */
+}
+
+/* Estilização dos textos fortes (strong) dentro da área principal */
+main strong {
+    color: var(--cor4); /* Cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 2px; /* Espaçamento interno */
+}
+
+/* Estilização dos links dentro da área principal */
+main a {
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: var(--cor5); /* Cor do texto */
+    padding: 2px 6px; /* Espaçamento interno */
+    background-color: var(--cor1); /* Cor de fundo */
+}
+
+/* Estilização dos links dentro da área principal ao serem hover */
+main a:hover {
+    text-decoration: underline; /* Adiciona sublinhado */
+    color: var(--cor4); /* Cor do texto ao passar o mouse */
+}
+
+/* Estilização das imagens dentro da área principal */
+main img {
+    width: 100%; /* Largura total da imagem */
+}
+
+/* Estilização das imagens com a classe 'pequena' dentro da área principal */
+main img.pequena {
+    max-width: 350px; /* Largura máxima */
+    display: block; /* Transforma a imagem em um elemento de bloco */
+    margin: auto; /* Centraliza a imagem */
+}
+
+/* Estilização da div de vídeo */
+div.video {
+    background-color: var(--cor5); /* Cor de fundo */
+    margin: 0px -20px 30px -20px; /* Margem negativa e inferior */
+    padding: 20px; /* Espaçamento interno */
+    padding-bottom: 58%; /* Espaçamento inferior relativo ao aspecto do vídeo */
+    position: relative; /* Posição relativa para o iframe */
+}
+
+/* Estilização do iframe dentro da div de vídeo */
+div.video > iframe {
+    position: absolute; /* Posição absoluta para ocupar a div */
+    top: 5%; /* Distância do topo */
+    left: 5%; /* Distância da esquerda */
+    width: 90%; /* Largura do iframe */
+    height: 90%; /* Altura do iframe */
+}
+
+/* Estilização da barra lateral (aside) */
+aside {
+    background-color: var(--cor1); /* Cor de fundo */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 10px; /* Arredondamento dos cantos */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281); /* Sombra ao redor */
+}
+
+/* Estilização dos títulos (h3) dentro da barra lateral */
+aside > h3 {
+    background-color: var(--cor4); /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    margin: -10px -10px 0px -10px; /* Margem negativa para anular o padding */
+    border-radius: 10px 10px 0px 0px; /* Arredondamento dos cantos superiores */
+}
+
+/* Estilização das listas dentro da barra lateral */
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /* Tipo de lista com checkmarks */
+    list-style-position: inside; /* Posição do marcador dentro da lista */
+    columns: 2; /* Exibe a lista em duas colunas */
+}
+
+/* Estilização do rodapé */
+footer {
+    background-color: var(--cor5); /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    font-size: 0.8em; /* Tamanho da fonte */
+    padding: 5px; /* Espaçamento interno */
+}
+
+/* Estilização dos links dentro do rodapé */
+footer a {
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+/* Estilização dos links dentro do rodapé ao serem hover */
+footer a:hover {
+    text-decoration: underline; /* Adiciona sublinhado */
+    color: var(--cor1); /* Cor do texto ao passar o mouse */
+}
